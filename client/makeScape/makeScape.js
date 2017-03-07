@@ -42,14 +42,16 @@ angular.module('scapeMaker.makeScape', [])
 			land: $scope.landUrl
 		}
 
-		console.log('createScape func called!', scapeObj)
+		$scope.currentTitle = scapeObj.title
+		$scope.currentSkyUrl = scapeObj.sky
+		$scope.currentLandUrl = scapeObj.land
 
-		// console.log('obj we intend to "POST" ', scapeObj)
+		console.log('obj we intend to "POST" ', scapeObj)
 
-		// Speak.addOne(scapeObj)
-		// 	.then(function(res) {
-		// 		console.log('this is the responce after writing to db ---$@#%&#$@--- ', res);
-		// 	})
+		Speak.addOne(scapeObj)
+			.then(function(res) {
+				console.log('this is the responce after writing to db ---$@#%&#$@--- ', res);
+			})
 	}
 
 
