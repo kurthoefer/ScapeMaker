@@ -1,36 +1,37 @@
 var express = require('express');
 var app = express();
 
-var mongoose = require('mongoose');
-var bodyParser = require('body-parser');
+// var mongoose = require('mongoose');
+// var bodyParser = require('body-parser');
 
-mongoose.connect('mongodb://localhost/whatever');
+// mongoose.connect('mongodb://localhost/whatever');
 
-var db = mongoose.connection;
-var Schema = mongoose.Schema;
+// var db = mongoose.connection;
+// var Schema = mongoose.Schema;
 
 
 //these two are redundant... 
 //but they are nice because they report errors and say we are connected, respectively
-db.on('error', console.error.bind(console, 'connection error:'))
-db.once('open', function() {
-	console.log('we are connected')
-})
+
+// db.on('error', console.error.bind(console, 'connection error:'))
+// db.once('open', function() {
+// 	console.log('we are connected')
+// })
 
 
-var scapeSchema = new Schema(
-	{
-		// author: String,
-		title: String,
-		skyUrl: String,
-		landUrl: String,
-	}
-);
+// var scapeSchema = new Schema(
+// 	{
+// 		// author: String,
+// 		title: String,
+// 		skyUrl: String,
+// 		landUrl: String,
+// 	}
+// );
 
-var Scape = mongoose.model('Scape', scapeSchema);
+// var Scape = mongoose.model('Scape', scapeSchema);
 
-app.use(express.static(__dirname));
-app.use(bodyParser.json());
+app.use(express.static(__dirname + '/../client'));
+// app.use(bodyParser.json());
 
 
 /*

@@ -1,9 +1,26 @@
+<!-- <head>
+		<title>Scape Maker</title>
+	  <script 
+	  src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+	  <script 
+	  src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-route.min.js">
+	  </script>
+	</head>
+
+<div ng-app = 'makeScape'> -->
+
 <div ng-controller='makeScapeCtrl'>
 	<div>Title:</div>
 	<input ng-model='title' type='text'> <br>
-	<input ng-model='sky' type='text'> <br>
-	<input ng-model='land' type='text'> <br>
+	<input ng-model='skyUrl' type='text'> <br>
+	<input ng-model='landUrl' type='text'> <br>
 	<input ng-click='createScape()' type='submit' value='Submit'>
+	<div>
+		<div>{{title}}</div>
+		<img ng-src="{{skyUrl}}"/>
+		<img ng-src="{{landUrl}}"/>
+	</div>
 </div>
 
-<img src=>
+
+<!-- </div> -->
