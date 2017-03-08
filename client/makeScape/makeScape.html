@@ -8,13 +8,11 @@
 		<button class='submissionBtn' ng-click='createScape()' type='button'>Submit</button>
 	</div>
 
-	<div>
-		<div class='top'><h3>{{currentTitle}}</h3></div>
-		<div class='sky'>
-			<img ng-src="{{currentSkyUrl}}"/>
-		</div>
-		<div class='land'>
-			<img ng-src="{{currentLandUrl}}"/>
-		</div>
+	<div class='top'><h3>{{currentTitle}}</h3></div>
+	<div class='skyContainer'>
+		<img class='sky' ng-src="{{currentSkyUrl}}"/>
+	</div>
+	<div class='landContainer'>
+		<img class='land' ng-src="{{currentLandUrl}}"/>
 	</div>
 </div>
