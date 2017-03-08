@@ -1,12 +1,63 @@
+html * {
+	font-family: Arial;
+}
+
 h1 {
   background-color: #565656;
   color: transparent;
-  text-shadow: 0px 2px 3px rgba(255,255,255,0.5);
+  text-shadow: 0px 2px 3px rgba(255,255,255,0.3);
+  -webkit-background-clip: text;
+     -moz-background-clip: text;
+          background-clip: text;
+}
+
+h3 {
+	background-color: #565656;
+  color: transparent;
+  text-shadow: 0px 2px 3px rgba(255,255,255,0.3);
   -webkit-background-clip: text;
      -moz-background-clip: text;
           background-clip: text;
 }
 
 body {
-	background-color: red;
+	background-color: #e8ecf2;
 }
+
+input {
+	width:60%;
+	text-align: center;
+}
+
+.submissionBtn {
+	width:30%;
+	text-align: center;
+}
+
+.top {
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+.sky {
+	position: static;
+	margin-left: auto;
+	margin-right: auto;
+	width: 80%;
+}
+
+.land {
+	position: static;
+	margin-left: auto;
+	margin-right: auto;
+	width: 80%;
+}
+
+img {
+	display: block;
+	margin: 0 auto;
+}
+
+
+
