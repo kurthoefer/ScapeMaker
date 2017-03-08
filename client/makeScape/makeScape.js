@@ -38,13 +38,13 @@ angular.module('scapeMaker.makeScape', [])
 
 		let scapeObj = {
 			title: $scope.title,
-			sky: $scope.skyUrl,
-			land: $scope.landUrl
+			skyUrl: $scope.skyUrl,
+			landUrl: $scope.landUrl
 		}
 
-		$scope.currentTitle = scapeObj.title
-		$scope.currentSkyUrl = scapeObj.sky
-		$scope.currentLandUrl = scapeObj.land
+		$scope.currentTitle = scapeObj.title;
+		$scope.currentSkyUrl = scapeObj.skyUrl;
+		$scope.currentLandUrl = scapeObj.landUrl;
 
 		console.log('obj we intend to "POST" ', scapeObj)
 

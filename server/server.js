@@ -1,16 +1,24 @@
-var express = require('express');
-var app = express();
+let express = require('express');
+let app = express();
 
-var mongoose = require('mongoose');
-var bodyParser = require('body-parser');
+//mongoose to kick up mongo
+let mongoose = require('mongoose');
 
+//db seeding function here:
+let dbSeeder = require('./seeddb.js');
+
+
+//midleware for parsing request objects
+let bodyParser = require('body-parser');
+
+
+let scapeHandler = require('./scapeHandler.js')
+
+
+
+//kick off mongo
 mongoose.connect('mongodb://localhost/whatever');
-
-var db = mongoose.connection;
-var Schema = mongoose.Schema;
-
-
-//might want to abstract away from server.js
+let db = mongoose.connection;
 
 
 //these two are redundant... 
@@ -18,8 +26,27 @@ var Schema = mongoose.Schema;
 
 db.on('error', console.error.bind(console, 'connection error:'))
 db.once('open', function() {
-	console.log('we are connected')
+	console.log('we are connected to the db')
 })
+
+
+dbSeeder();
+// let seedScapes = [
+// 	{
+// 		title: 'FILL1',
+// 		skyUrl: 'https://pbs.twimg.com/profile_images/2968304317/652317f26fb6506d89938d1104bd68b1.jpeg',
+// 		landUrl: 'https://pbs.twimg.com/profile_images/2968304317/652317f26fb6506d89938d1104bd68b1.jpeg'
+// 	},
+// 	{
+// 		title: 'FILL2',
+// 		skyUrl: 'https://pbs.twimg.com/profile_images/2968304317/652317f26fb6506d89938d1104bd68b1.jpeg',
+// 		landUrl: 'https://pbs.twimg.com/profile_images/2968304317/652317f26fb6506d89938d1104bd68b1.jpeg'
+// 	}
+// ]
+
+// // drop and rebuild my db with entries from 'seedScapes'
+// db.collections['scapes'].drop()
+// for (let entry of seedScapes) Scape.create(entry);
 
 
 app.use(express.static(__dirname + '/../client'));
@@ -27,35 +54,17 @@ app.use(bodyParser.json());
 
 
 
-// app.get('/api/getAll', function(req, res) {
+// requestHandler.postOne
+app.post('/api/addOne', scapeHandler.postOne);
 
-// 	Todo.find(function (err, todo) {
-// 	if (err) console.error(err);
-// 	res.send(todo);
-// 	res.end();
-
-// 	});
-// });
+// requestHandler.getAll
+app.get('/api/getAll', scapeHandler.getAll);
 
 
 
 
-
-let postOne = function(req, res) {
-
-	console.log('HERES JONNY-------', req.body)
-	// Scape.create(req.body, function(err) {
-	// if (err) {}
-	// console.log('we posted it!')
-	// res.end();
-
-	};
-// });
-
-app.post('/api/addOne', postOne);
 
 app.listen(8000, console.log('listening on port 8000'));
-
 
 
 

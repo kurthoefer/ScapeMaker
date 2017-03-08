@@ -2,16 +2,16 @@ angular.module('scapeMaker.services', [])
 
 .factory('Speak', function($http) {
 
-	// let getAll = function() {
-	// 	return $http({
-	// 		method: 'GET',
-	// 		url: ''
-	// 	})
-	// 	.then(function(res) {
-	// 		return res.data;
-	// 	});
-	// };
-		// .get('/front')
+	let getAll = function() {
+		return $http({
+			method: 'GET',
+			url: '/api/getAll'
+		})
+		.then(function(res) {
+      console.log(res.data); 
+			return res.data;
+		});
+	};
 
 	var addOne = function (theGoods) {
     return $http({
@@ -25,7 +25,7 @@ angular.module('scapeMaker.services', [])
   };
   
   return {
-    // getAll: getAll,
+    getAll: getAll,
     addOne: addOne
   };
 

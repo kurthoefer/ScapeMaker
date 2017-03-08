@@ -1,9 +1,9 @@
 
 <div ng-controller='makeScapeCtrl'>
-	<div>Title:</div>
-	<input ng-model='title' type='text'> <br>
-	<input ng-model='skyUrl' type='text'> <br>
-	<input ng-model='landUrl' type='text'> <br>
+	<h1>Make your Scape!</h1>
+	<input ng-model='title' type='text' placeholder='Title'> <br>
+	<input ng-model='skyUrl' type='text' placeholder='Sky Img'> <br>
+	<input ng-model='landUrl' type='text' placeholder='Land Img'> <br>
 	<input ng-click='createScape()' type='submit' value='Submit'>
 	<div>
 		<div>{{currentTitle}}</div>
