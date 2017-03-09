@@ -4,9 +4,9 @@ let db = mongoose.connection;
 
 let seedScapes = [
 	{
-		title: 'FILL69',
-		skyUrl: 'https://pbs.twimg.com/profile_images/2968304317/652317f26fb6506d89938d1104bd68b1.jpeg',
-		landUrl: 'https://pbs.twimg.com/profile_images/2968304317/652317f26fb6506d89938d1104bd68b1.jpeg'
+		title: 'Thats pretty neat',
+		skyUrl: 'http://eskipaper.com/images/stunning-landscape-wallpaper-2.jpg',
+		landUrl: 'https://s-media-cache-ak0.pinimg.com/originals/e3/ac/e8/e3ace8faa23c2ca35c60aefea05a91ca.jpg'
 	},
 	{
 		title: 'FILL27',
